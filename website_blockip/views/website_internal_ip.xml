@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <act_window
+                id="webste_intenal_ip_action"
+                name="Internal IP"
+                res_model="website.internal_ip"/>
+
+        <menuitem
+                id="webste_intenal_ip_menu"
+                name="Internal IP"
+                parent="base.menu_ir_property"
+                action="webste_intenal_ip_action"/>
+
+        <record id="webste_intenal_ip_form" model="ir.ui.view">
+            <field name="name">Internal IP</field>
+            <field name="model">website.internal_ip</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <p colspan="2">
+                            Geef een nieuw ip adres op dat zonder wachtwoord toegang krijgt tot de website.<br/>
+                            Het adres moet in de CIDR vorm zijn. Enkele voorbeelden:<br/>
+                            * 192.168.1.0/24 -- voor alle hosts: 192.168.1.1 t/m 192.168.1.254<br/>
+                            * 75.748.86.91/32 -- Voor alleen de host 75.748.86.91<br/>
+                        </p>
+                        <newline/>
+                        <group colspan="2">
+                            <field name="name" colspan="2"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="webste_intenal_ip_tree" model="ir.ui.view">
+            <field name="name">Internal IP</field>
+            <field name="model">website.internal_ip</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</openerp>
